@@ -13,3 +13,13 @@ the following form: YYYY.0M.0D.
 - Designed a InventorySystem component
 - Designed a HealthSystem component
 - Designed a LevelingSystem component
+
+## 2024.10.03
+
+### Added
+
+- Designed a proof of concept for the HealthSystem component.
+
+### Updated
+
+- Changed design to remove the `isAlive` method in favor of using `getHealth` for more clarity.
