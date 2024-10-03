@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Mohammad Asad
+- **Dot Number**: Asad.25
+- **Due Date**: 9/16 @ 12:40
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -98,23 +90,21 @@ do good work.
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+I am still very new to software and coding but I have always been interested in
+technology for as long as I can remember. I have been using a computer for the better
+half of my life and I have been playing video games for even longer. I still am not
+100% sure what career goals I want to achieve, but I think I will be happy with any
+job that involves coding whether it be programming, game development, web development etc.
+Since I have a lot of experience playing video games I think I would like to
+develop some basic components that could relate to that it some way.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -123,8 +113,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -192,70 +180,90 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: InventorySystem
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models a collection of items that a character can hold in a game. It allows adding, removing, and checking the contents of the inventory. The kernel of this component provides essential functionality to manage the items, while more advanced behaviors like finding specific items or checking for duplicates can be part of the secondary interface.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addItem(String item)`: Adds a given item to the inventory.
+    - `String removeItem()`: Removes the most recently added item (or from the right front if it's FIFO-style).
+    - `boolean isEmpty()`: Reports whether the inventory has any items.
+    - `int size()`: Reports the number of items currently in the inventory.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `boolean containsItem(String item)`: Checks if a specific item exists in the inventory.
+    - `void removeItem(String item)`: Removes a specific item from the inventory, if present.
+    - `void clear()`: Clears all items from the inventory.
+    - `int findItemIndex(String item)`: Returns the index of the specified item in the inventory.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would be mutable. The inventory can grow, shrink, or be modified as items are added or removed.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, this component would not rely on internal classes. It operates using simple data structures like sequences or lists to manage items.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Possibly. If I decide to categorize items, enums could be used for item types. Otherwise, no constants are required.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, removeItem(String item) can be implemented using removeItem() and iterating through the items to find the one matching the input, and then removing it.
 
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: HealthSystem
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models the health of a playable character in a game. It allows managing the character’s health points (HP), which can be incremented, decremented, or reset based on in-game events such as taking damage, healing, or starting a new level. The kernel will handle basic health changes, while secondary methods provide additional functionalities like checking for a critical health status or restoring health.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void takeDamage(int damage)`: Decreases the health by the specified damage amount.
+    - `void heal(int amount)`: Increases the health by the specified amount, up to the maximum health.
+    - `boolean isAlive()`: Reports whether the character is alive (health > 0).
+    - `int getHealth()`: Returns the current health of the character.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `boolean isCritical()`: Reports whether the character's health is in a critical state (like below 20% of max health).
+    - `void resetHealth()`: Resets the character's health to the maximum value.
+    - `void setMaxHealth(int maxHealth)`: Updates the maximum health value for the character.
+    - `int getMaxHealth()`: Returns the maximum health value.
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would be mutable. Health points will change frequently based on damage taken or healing received during gameplay.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, this component doesn't rely on internal classes. It operates with simple numeric values to track health and damage.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Potentially. Constants for specific status thresholds (critical health percentage) might be useful.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, resetHealth() can be implemented using the heal() method by setting health to the maximum value. isCritical() can use getHealth() and getMaxHealth() to calculate if the current health is below a certain threshold.
 
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: LevelingSystem
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models a character's progression through levels in a game. It tracks experience points (XP) and manages the transition between levels when enough XP is gained. The component allows adding XP, checking the current level, and determining how much XP is required for the next level. Kernel methods will handle XP and level progression, while secondary methods can provide more complex operations like resetting the level or modifying the XP curve.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addExperience(int xp)`: Adds experience points to the character.
+    - `int getCurrentLevel()`: Returns the current level of the character.
+    - `int getExperienceToNextLevel()`: Returns the XP required to reach the next level.
+    - `int getCurrentExperience()`: Returns the character’s current XP.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void resetLevel()`: Resets the character’s level and experience to the starting values (e.g., for starting a new game or mission).
+    - `boolean hasLeveledUp()`: Returns whether the character has enough XP to advance to the next level.
+    - `void levelUp()`: Increases the character’s level if they have gained enough XP.
+    - `void setExperienceCurve(Function<Integer, Integer> xpCurve)`: Sets a custom experience curve, adjusting how much XP is required to reach each new level.
+    - `int getTotalExperience()`: Returns the total XP earned across all levels.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would be mutable since the character’s XP and level will change throughout the game as they gain experience.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - It might rely on a Function class or other internal data structures to define an XP curve, but no additional classes are necessary for basic operations.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, it could potentially use constants to define specific XP thresholds for leveling up or predefined levels (e.g., MAX_LEVEL).
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, hasLeveledUp() can use getCurrentExperience() and getExperienceToNextLevel() to determine if the XP exceeds the requirement for leveling up. Similarly, levelUp() can check if the XP threshold is met and then increment the level.
 
 ## Post-Assignment
 
@@ -263,8 +271,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -303,8 +309,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -313,11 +317,7 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
-
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -343,8 +343,6 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
