@@ -15,7 +15,7 @@ import components.simplewriter.SimpleWriter1L;
  * health and various methods to interact with the health system.
  *
  */
-public class HealthSystem {
+public class HealthSystemPOC {
 
     /**
      * Representation of the current health of the entity. This value is stored
@@ -36,7 +36,7 @@ public class HealthSystem {
      * @param initialHealth
      *            initial health value
      */
-    public HealthSystem(int initialHealth) {
+    public HealthSystemPOC(int initialHealth) {
         this.health = new NaturalNumber1L(initialHealth);
         // Assume max health equals initial health
         this.maxHealth = new NaturalNumber1L(initialHealth);
@@ -105,7 +105,7 @@ public class HealthSystem {
         SimpleReader in = new SimpleReader1L();
 
         // Initialize a HealthSystem with 100 health
-        HealthSystem player = new HealthSystem(100);
+        HealthSystemPOC player = new HealthSystemPOC(100);
 
         // Show initial health and status
         out.println("Player's initial health: " + player.getHealth());
