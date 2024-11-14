@@ -31,11 +31,4 @@ public interface HealthSystem extends HealthSystemKernel {
      */
     void setMaxHealth(int maxHealth);
 
-    /**
-     * Returns the maximum health value.
-     *
-     * @return the maximum health value
-     * @ensures getMaxHealth = MAX_HEALTH
-     */
-    int getMaxHealth();
 }

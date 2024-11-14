@@ -47,4 +47,23 @@ public interface HealthSystemKernel extends Standard<HealthSystemKernel> {
      * @ensures getHealth = this
      */
     int getHealth();
+
+    /**
+     * Returns the maximum health value.
+     *
+     * @return the maximum health value
+     * @ensures maxHealth > 0
+     */
+    int maxHealth();
+
+    /**
+     * Updates the maximum health to a new specified value.
+     *
+     * @param newMaxHealth
+     *            the new maximum health value
+     * @updates this
+     * @requires newMaxHealth > 0
+     * @ensures maxHealth = newMaxHealth
+     */
+    void updateMaxHealth(int newMaxHealth);
 }

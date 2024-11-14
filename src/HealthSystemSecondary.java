@@ -18,7 +18,7 @@ public abstract class HealthSystemSecondary implements HealthSystem {
     public String toString() {
         StringBuilder result = new StringBuilder("HealthSystem(");
         result.append("Current Health: ").append(this.getHealth()).append(", ");
-        result.append("Max Health: ").append(this.getMaxHealth()).append(", ");
+        result.append("Max Health: ").append(this.maxHealth()).append(", ");
         result.append("Status: ").append(this.isAlive() ? "Alive" : "Dead");
         return result.append(")").toString();
     }
@@ -27,37 +27,24 @@ public abstract class HealthSystemSecondary implements HealthSystem {
      * Other secondary methods ------------------------------------------------
      */
 
-    // Field to store the maximum health value
-    private int maxHealth;
-
-    // Constructor to initialize max health to a default value
-    protected HealthSystemSecondary(int maxHealth) {
-        this.maxHealth = maxHealth;
-    }
-
     // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public boolean isCritical() {
         // Critical if current health is less than 20% of maxHealth
-        return this.getHealth() < 0.2 * this.maxHealth;
+        return this.getHealth() < 0.2 * this.maxHealth();
     }
 
     // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public void resetHealth() {
         int currentHealth = this.getHealth();
-        this.heal(this.maxHealth - currentHealth);
+        this.heal(this.maxHealth() - currentHealth);
     }
 
     // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
+        this.updateMaxHealth(maxHealth);
     }
 
-    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
-    @Override
-    public int getMaxHealth() {
-        return this.maxHealth;
-    }
 }
