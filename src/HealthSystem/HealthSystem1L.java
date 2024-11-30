@@ -1,3 +1,5 @@
+package HealthSystem;
+
 import components.naturalnumber.NaturalNumber;
 import components.naturalnumber.NaturalNumber1L;
 
@@ -110,9 +112,12 @@ public class HealthSystem1L extends HealthSystemSecondary {
         assert amount >= 0 : "Violation of: amount >= 0";
 
         NaturalNumber healAmount = new NaturalNumber1L(amount);
-        this.health.add(healAmount);
-        if (this.health.compareTo(this.maxHealth) > 0) {
-            this.health.copyFrom(this.maxHealth); // Enforce max health limit
+        NaturalNumber check = new NaturalNumber1L();
+        if (this.health.compareTo(check) > 0) {
+            this.health.add(healAmount);
+            if (this.health.compareTo(this.maxHealth) > 0) {
+                this.health.copyFrom(this.maxHealth); // Enforce max health limit
+            }
         }
     }
 

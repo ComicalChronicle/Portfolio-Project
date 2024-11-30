@@ -1,3 +1,5 @@
+package HealthSystem;
+
 /**
  * HealthSystemKernel enhanced with secondary methods for advanced health
  * management.

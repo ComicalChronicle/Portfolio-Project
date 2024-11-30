@@ -1,3 +1,5 @@
+package HealthSystem;
+
 /**
  * Layered implementations of secondary methods for {@code HealthSystem}.
  */
